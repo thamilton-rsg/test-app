@@ -1,9 +1,10 @@
 node {
 
    stage('ARCHIVE') {
-     sh "ls -l"
-     sh "pwd"
-    step([$class: 'ArtifactArchiver', artifacts: '.', fingerprint: false])
+    sh "ls -l"
+    sh "touch test.yml"
+    sh "pwd"
+    step([$class: 'ArtifactArchiver', artifacts: '*', fingerprint: false])
    }
 
    stage('ARTIFACTORY') {
