@@ -2,6 +2,7 @@ node {
 
    stage('ARCHIVE') {
      sh "ls -l"
+     sh "pwd"
     step([$class: 'ArtifactArchiver', artifacts: '.', fingerprint: false])
    }
 
@@ -17,7 +18,7 @@ node {
    """
 
     // Get Artifactory server instance, defined in the Artifactory Plugin admin page.
-    def server = Artifactory.server ARTIFACTORY
+    def server = Artifactory.server "artifactory.rsglab.com:8081"
 
     server username = "admin"
     server password = "password"
