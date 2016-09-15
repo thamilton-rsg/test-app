@@ -23,7 +23,7 @@ node {
     // server username = "admin"
     // server password = "password"
 
-    def buildUpload = server.artifactoryUpload(uploadSpec)
+    def buildUpload = server.upload(uploadSpec)
     server.publishBuildInfo(buildUpload)
 
    }
