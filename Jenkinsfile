@@ -1,7 +1,7 @@
 node {
 
    stage('ARCHIVE') {
-    step([$class: 'ArtifactArchiver', artifacts: '*', fingerprint: false])
+    step([$class: 'ArtifactArchiver', artifacts: '.', fingerprint: false])
    }
 
    stage('ARTIFACTORY') {
