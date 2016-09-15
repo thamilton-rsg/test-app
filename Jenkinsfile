@@ -1,6 +1,7 @@
 node {
 
    stage('ARCHIVE') {
+     sh "ls -l"
     step([$class: 'ArtifactArchiver', artifacts: '.', fingerprint: false])
    }
 
