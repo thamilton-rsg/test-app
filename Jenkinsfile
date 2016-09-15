@@ -9,12 +9,14 @@ node {
    stage('ARTIFACTORY') {
 
    def uploadSpec = """
-    "files": [
-      {
-        "pattern": "*.zip",
-        "target": "test-app/develop/"
-      }
-    ]
+   {
+      "files": [
+        {
+          "pattern": "*.zip",
+          "target": "test-app/develop/"
+        }
+      ]
+    }
    """
 
     // Get Artifactory server instance, defined in the Artifactory Plugin admin page.
@@ -24,6 +26,7 @@ node {
     // server password = "password"
 
     def buildUpload = server.upload(uploadSpec)
+
     server.publishBuildInfo(buildUpload)
 
    }
