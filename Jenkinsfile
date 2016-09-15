@@ -18,7 +18,7 @@ node {
    """
 
     // Get Artifactory server instance, defined in the Artifactory Plugin admin page.
-    def server = Artifactory.server "ARTIFACTORY"
+    def server = Artifactory.server "http://192.168.213.104:8081/artifactory"
 
     server username = "admin"
     server password = "password"
