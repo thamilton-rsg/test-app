@@ -18,7 +18,7 @@ node {
    """
 
     // Get Artifactory server instance, defined in the Artifactory Plugin admin page.
-    def server = Artifactory.server "artifactory.rsglab.com:8081"
+    def server = Artifactory.server "ARTIFACTORY"
 
     server username = "admin"
     server password = "password"
