@@ -20,11 +20,11 @@ node {
     // Get Artifactory server instance, defined in the Artifactory Plugin admin page.
     def server = Artifactory.server "ARTIFACTORY"
 
-    server username = "admin"
-    server password = "password"
+    // server username = "admin"
+    // server password = "password"
 
-    // def buildUpload = server.upload(uploadSpec)
-    // server.publishBuildInfo(buildUpload)
+    def buildUpload = server.upload(uploadSpec)
+    server.publishBuildInfo(buildUpload)
 
    }
 }
