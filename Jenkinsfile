@@ -13,8 +13,8 @@ node {
    {
       "files": [
         {
-          "pattern": "{*}.zip",
-          "target": "test-app/{1}"
+          "pattern": "test.zip",
+          "target": "test-app/develop/"
         }
       ]
     }
