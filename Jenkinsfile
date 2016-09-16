@@ -14,7 +14,7 @@ node {
       "files": [
         {
           "pattern": "test.zip",
-          "target": "test-app/develop/"
+          "target": "test-app/development/"
         }
       ]
     }
