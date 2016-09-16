@@ -14,7 +14,7 @@ node {
       "files": [
         {
           "pattern": "test.zip",
-          "target": "test-app/$BRANCH_NAME"
+          "target": "test-app/${env.BRANCH_NAME}"
         }
       ]
     }
