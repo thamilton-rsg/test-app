@@ -3,7 +3,7 @@ node {
    stage('ARCHIVE') {
     git url: "https://github.com/thamilton-rsg/test-app.git"
     archiveArtifacts artifacts: '*', excludes: null, fingerprint: true
-    sh "zip ${env.JOB_NAME}-${env.BUILD_NUMBER} *"
+    sh "zip ${env.JOB_BASE_NAME}-${env.BUILD_NUMBER} *"
     // zip archive: true, dir: '', glob: '', zipFile: 'test.zip'
    }
 
@@ -13,7 +13,7 @@ node {
    {
       "files": [
         {
-          "pattern": "${env.JOB_NAME}-${env.BUILD_NUMBER}.zip",
+          "pattern": "${env.JOB_BASE_NAME}-${env.BUILD_NUMBER}.zip",
           "target": "test-app/${env.BRANCH_NAME}/"
         }
       ]
