@@ -3,8 +3,7 @@ node {
    stage('ARCHIVE') {
     sh "touch test.yml"
     sh "echo 'Hello world' >> test.yml"
-    zip archive: true, dir: '.', glob: '*', zipFile: 'test.zip'
-    archive "*"
+    zip archive: true, dir: '', glob: '', zipFile: 'test.zip'
    }
 
    stage('ARTIFACTORY') {
