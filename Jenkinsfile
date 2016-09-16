@@ -1,10 +1,9 @@
 node {
 
    stage('ARCHIVE') {
-    sh "ls -l"
     sh "touch test.yml"
     sh "echo 'Hello world' >> test.yml"
-    zip archive: true, dir: '', glob: '*', zipFile: 'test.zip'
+    zip archive: true, dir: '.', glob: '*', zipFile: 'test.zip'
     archive "*"
    }
 
