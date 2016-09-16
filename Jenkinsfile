@@ -1,6 +1,7 @@
 node {
 
    stage('ARCHIVE') {
+    git url: "https://github.com/thamilton-rsg/test-app.git"
     sh "touch test.yml"
     sh "echo 'Hello world' >> test.yml"
     zip archive: true, dir: '', glob: '', zipFile: 'test.zip'
@@ -12,8 +13,8 @@ node {
    {
       "files": [
         {
-          "pattern": "*.zip",
-          "target": "test-app/develop/"
+          "pattern": "test.zip",
+          "target": "test-app"
         }
       ]
     }
@@ -25,7 +26,7 @@ node {
     // server username = "admin"
     // server password = "password"
 
-    def buildUpload = server.upload(uploadSpec)
+    def buildUpload = server.upload spec: uploadSpec
 
     server.publishBuildInfo(buildUpload)
 
