@@ -3,6 +3,7 @@ node {
    stage('ARCHIVE') {
     git url: "https://github.com/thamilton-rsg/test-app.git"
     archiveArtifacts artifacts: '*', excludes: null, fingerprint: true
+    sh "zip test *"
     // zip archive: true, dir: '', glob: '', zipFile: 'test.zip'
    }
 
